@@ -2,14 +2,14 @@
 import styles from './PokemonCard.module.css';
 
 
-function PokemonCard({props}) {
+function PokemonCard({pokemon}) {
 
   return (
     <div>
       <figure className={styles.card}>
-      {props.imgSrc ? 
+      {pokemon.imgSrc ? 
         <img 
-          src={props.imgSrc}
+          src={pokemon.imgSrc}
           alt="Bulbasaur-picture"
           className={styles.card_img}
         />
@@ -17,7 +17,7 @@ function PokemonCard({props}) {
         <p>?????</p>
       }
       </figure>
-      <figcaption>{props.name}</figcaption>
+      <figcaption>{pokemon.name}</figcaption>
     </div>
   );
 }

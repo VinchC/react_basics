@@ -14,11 +14,9 @@ function App() {
     },
   ];
 
-  let pokemon = pokemonList[0];
-
   return (
     <div>
-      <PokemonCard props={pokemon} />
+      <PokemonCard pokemon={pokemonList[1]} />
     </div>
   );
 }
