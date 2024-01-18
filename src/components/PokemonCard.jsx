@@ -1,25 +1,15 @@
+/* eslint-disable react/prop-types */
 import styles from './PokemonCard.module.css';
 
 
-const pokemonList = [
-  {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
+function PokemonCard({props}) {
 
-function PokemonCard() {
-  let pokemon = pokemonList[1];
   return (
     <div>
       <figure className={styles.card}>
-      {pokemon.imgSrc ? 
+      {props.imgSrc ? 
         <img 
-          src={pokemon.imgSrc}
+          src={props.imgSrc}
           alt="Bulbasaur-picture"
           className={styles.card_img}
         />
@@ -27,7 +17,7 @@ function PokemonCard() {
         <p>?????</p>
       }
       </figure>
-      <figcaption>{pokemon.name}</figcaption>
+      <figcaption>{props.name}</figcaption>
     </div>
   );
 }
