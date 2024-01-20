@@ -3,6 +3,8 @@
 import { useState } from "react";
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/Navbar";
+import Counter from "./components/Counter";
+import Search from "./components/Search";
 // import SayHello from "./components/SayHello";
 
 import "./App.css";
@@ -40,6 +42,8 @@ function App() {
 
   return (
     <div>
+      <Search />
+      <Counter />
       <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList={pokemonList}/>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
     </div>
