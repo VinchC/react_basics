@@ -1,4 +1,5 @@
 import PokemonCard from "./components/PokemonCard";
+import SayHello from "./components/SayHello";
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <div>
       <PokemonCard pokemon={pokemonList[1]} />
+      <SayHello name="Vincent" age={41} />
     </div>
   );
 }
