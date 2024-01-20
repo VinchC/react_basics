@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import PokemonCard from "./components/PokemonCard";
+import NavBar from "./components/Navbar";
 // import SayHello from "./components/SayHello";
 
 import "./App.css";
@@ -36,22 +37,10 @@ function App() {
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const previousPokemon = () => {
-    setPokemonIndex(pokemonIndex - 1);
-  }
-
-  const nextPokemon = () => {
-    setPokemonIndex(pokemonIndex + 1);
-  }
 
   return (
     <div>
-      { pokemonIndex > 0 && (
-        <button type="button" onClick={previousPokemon}>Précédent</button>
-      )}
-      { pokemonIndex < pokemonList.length - 1 && (
-        <button onClick={nextPokemon}>Suivant</ button>
-      )}
+      <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList={pokemonList}/>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
     </div>
   );
