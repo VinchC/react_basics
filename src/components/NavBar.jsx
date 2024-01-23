@@ -1,12 +1,6 @@
 import PropTypes from "prop-types";
 
 function NavBar({setPokemonIndex, pokemonList}) {
-  const pikachuCheck = () => {
-    if (pokemonList[name] == "pikachu") {
-      alert("pika pikachu !!!");
-    }
-  }
-
 
     return (
         <nav>
@@ -15,7 +9,9 @@ function NavBar({setPokemonIndex, pokemonList}) {
               type="button"
               onClick={() => {
                 setPokemonIndex(index); 
-                pikachuCheck(pokemon.name)
+                if (pokemon.name === "pikachu") {
+                  alert("pika pikachu !!!");
+                }
               }}
               key={pokemon.name}
             >
