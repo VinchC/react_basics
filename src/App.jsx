@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PokemonCard from "./components/PokemonCard";
-import NavBar from "./components/Navbar";
+import NavBar from "./components/NavBar";
 import Counter from "./components/Counter";
 import Search from "./components/Search";
 // import SayHello from "./components/SayHello";
@@ -37,13 +37,20 @@ const pokemonList = [
 
 function App() {
 
+  useEffect(
+    () => {
+      alert("Hello Pokemon trainer !:)")
+    },
+    []
+  );
+
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
 
   return (
     <div>
-      <Search />
-      <Counter />
+      {/* <Search />
+      <Counter /> */}
       <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList={pokemonList}/>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
     </div>
